@@ -1,4 +1,4 @@
-# FalkorDB Data Lineage Proof-of-Concept for Despegar Data
+# FalkorDB Data Lineage Proof-of-Concept for a Generic Data team
 
 This project demonstrates a proof-of-concept (POC) for building a data lineage graph using [FalkorDB](https://falkordb.com/). It models a simplified version of the data ecosystem at a Generic Data team, including models, tables, columns, jobs, KPIs, and dashboards, along with their relationships and ownership.
 
