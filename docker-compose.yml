@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  falkordb:
+    image: falkordb/falkordb:edge
+    ports:
+      - "6379:6379"
+      - "3000:3000"
+    volumes:
+      - ./data:/var/lib/falkordb/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "-h", "localhost", "-p", "6379", "ping"]
+      interval: 1s
+      timeout: 3s
+      retries: 30
+
+  poc-populator:
+    build: .
+    depends_on:
+      falkordb:
+        condition: service_healthy 
